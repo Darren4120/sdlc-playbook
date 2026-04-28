@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280" style="background: transparent;">
+  <defs>
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0066CC;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#008DFC;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#9FD356;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8E986;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- SOFTWARE ENGINEERING EXCELLENCE text -->
+  <text x="600" y="50" font-family="Arial, sans-serif" font-size="42" font-weight="900" fill="#008DFC" text-anchor="middle" letter-spacing="4">
+    SOFTWARE ENGINEERING EXCELLENCE
+  </text>
+  
+  <!-- Continuous Delivery Pipeline title -->
+  <text x="600" y="100" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#CCCCCC" text-anchor="middle" letter-spacing="1">
+    Continuous Delivery Pipeline
+  </text>
+  
+  <!-- Background infinity loop rail -->
+  <ellipse cx="200" cy="165" rx="90" ry="45" fill="none" stroke="#4A5568" stroke-width="3" opacity="0.4"/>
+  <ellipse cx="450" cy="165" rx="90" ry="45" fill="none" stroke="#4A5568" stroke-width="3" opacity="0.4"/>
+  <ellipse cx="700" cy="165" rx="90" ry="45" fill="none" stroke="#4A5568" stroke-width="3" opacity="0.4"/>
+  
+  <!-- AGILE RELEASE TRAIN banner -->
+  <rect x="350" y="150" width="500" height="30" rx="5" fill="#1a1f35" opacity="0.8"/>
+  <text x="600" y="171" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#F5A623" text-anchor="middle" letter-spacing="2" font-style="italic">
+    AGILE RELEASE TRAIN
+  </text>
+  
+  <!-- Green arrows above -->
+  <g opacity="0.8">
+    <!-- Arrow 1 -->
+    <path d="M 180 130 Q 200 110 220 130" stroke="url(#arrowGradient)" stroke-width="3" fill="none"/>
+    <polygon points="220,130 215,120 210,130" fill="#9FD356"/>
+    
+    <!-- Arrow 2 -->
+    <path d="M 320 135 Q 350 120 380 135" stroke="url(#arrowGradient)" stroke-width="3" fill="none"/>
+    <polygon points="380,135 375,125 370,135" fill="#9FD356"/>
+    
+    <!-- Arrow 3 -->
+    <path d="M 520 135 Q 550 120 580 135" stroke="url(#arrowGradient)" stroke-width="3" fill="none"/>
+    <polygon points="580,135 575,125 570,135" fill="#9FD356"/>
+    
+    <!-- Arrow 4 -->
+    <path d="M 720 135 Q 750 120 780 135" stroke="url(#arrowGradient)" stroke-width="3" fill="none"/>
+    <polygon points="780,135 775,125 770,135" fill="#9FD356"/>
+  </g>
+  
+  <!-- Green arrows below -->
+  <g opacity="0.8">
+    <!-- Arrow 5 -->
+    <path d="M 240 195 Q 260 210 280 195" stroke="url(#arrowGradient)" stroke-width="3" fill="none"/>
+    <polygon points="280,195 275,205 270,195" fill="#9FD356"/>
+    
+    <!-- Arrow 6 -->
+    <path d="M 420 195 Q 450 210 480 195" stroke="url(#arrowGradient)" stroke-width="3" fill="none"/>
+    <polygon points="480,195 475,205 470,195" fill="#9FD356"/>
+    
+    <!-- Arrow 7 -->
+    <path d="M 620 195 Q 650 210 680 195" stroke="url(#arrowGradient)" stroke-width="3" fill="none"/>
+    <polygon points="680,195 675,205 670,195" fill="#9FD356"/>
+  </g>
+  
+  <!-- Stage 1: Continuous Exploration -->
+  <g transform="translate(125, 220)">
+    <text x="75" y="20" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">
+      Continuous
+    </text>
+    <text x="75" y="38" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">
+      Exploration
+    </text>
+  </g>
+  
+  <!-- Stage 2: Continuous Integration -->
+  <g transform="translate(375, 220)">
+    <text x="75" y="20" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">
+      Continuous
+    </text>
+    <text x="75" y="38" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">
+      Integration
+    </text>
+  </g>
+  
+  <!-- Stage 3: Continuous Deployment -->
+  <g transform="translate(625, 220)">
+    <text x="75" y="20" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">
+      Continuous
+    </text>
+    <text x="75" y="38" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">
+      Deployment
+    </text>
+  </g>
+  
+  <!-- Release on Demand icon and label -->
+  <g transform="translate(880, 150)">
+    <circle cx="30" cy="30" r="25" fill="#F5A623" opacity="0.9"/>
+    <path d="M 30 20 L 38 30 L 30 40 L 30 36 L 20 36 L 20 24 L 30 24 Z" fill="#FFFFFF"/>
+    
+    <text x="30" y="75" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#F5A623" text-anchor="middle">
+      Release on
+    </text>
+    <text x="30" y="90" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#F5A623" text-anchor="middle">
+      Demand
+    </text>
+  </g>
+</svg>

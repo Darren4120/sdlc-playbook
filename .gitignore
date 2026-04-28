@@ -1,0 +1,33 @@
+# Node modules
+node_modules/
+spfx-solution/node_modules/
+
+# Build outputs
+spfx-solution/lib/
+spfx-solution/dist/
+spfx-solution/temp/
+spfx-solution/release/
+spfx-solution/sharepoint/
+
+# Package files
+*.sppkg
+
+# Log files
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Backup files
+*-BACKUP-*.js
+*.bak
+
+# Excel temp files
+~$*.xlsx

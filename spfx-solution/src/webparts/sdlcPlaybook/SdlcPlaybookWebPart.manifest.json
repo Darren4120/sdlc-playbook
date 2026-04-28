@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "c4d5e6f7-a8b9-4c5d-be0f-1a2b3c4d5e6f",
+  "alias": "SdlcPlaybookWebPart",
+  "componentType": "WebPart",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": ["SharePointWebPart", "TeamsPersonalApp", "TeamsTab"],
+  "supportsThemeVariants": true,
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+    "group": { "default": "Advanced" },
+    "title": { "default": "SDLC Playbook" },
+    "description": { "default": "Interactive Lean-Agile SDLC Framework for Mercedes-Benz R&D India" },
+    "officeFabricIconFontName": "Rocket",
+    "properties": {
+      "description": "SDLC Playbook"
+    }
+  }]
+}
