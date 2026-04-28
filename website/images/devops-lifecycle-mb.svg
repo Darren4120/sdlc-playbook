@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" width="900" height="450">
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#008DFC"/>
+    </marker>
+  </defs>
+  
+  <!-- Background infinity loop path -->
+  <path d="M 150,225 Q 150,125 225,75 Q 300,25 375,25 Q 450,25 475,75 L 500,125 Q 525,75 600,25 Q 675,25 750,75 Q 825,125 825,225 Q 825,325 750,375 Q 675,425 600,425 Q 525,425 500,375 L 475,325 Q 450,375 375,425 Q 300,425 225,375 Q 150,325 150,225 Z" 
+        fill="none" stroke="#008DFC" stroke-width="70" opacity="0.9"/>
+  
+  <!-- Inner dark areas (for contrast) -->
+  <ellipse cx="260" cy="225" rx="120" ry="120" fill="#0A0E1A"/>
+  <ellipse cx="640" cy="225" rx="120" ry="120" fill="#0A0E1A"/>
+  
+  <!-- Center connecting piece for RELEASE -->
+  <path d="M 380,140 L 520,140 L 540,310 L 400,310 Z" fill="#008DFC" opacity="0.95"/>
+  
+  <!-- White circles for Dev and Ops text -->
+  <circle cx="260" cy="225" r="100" fill="#FFFFFF"/>
+  <circle cx="640" cy="225" r="100" fill="#FFFFFF"/>
+  
+  <!-- Dev text -->
+  <text x="260" y="245" font-family="'Open Sans', Arial, sans-serif" font-size="70" font-weight="700" fill="#008DFC" text-anchor="middle">Dev</text>
+  
+  <!-- Ops text -->
+  <text x="640" y="245" font-family="'Open Sans', Arial, sans-serif" font-size="70" font-weight="700" fill="#0066CC" text-anchor="middle">Ops</text>
+  
+  <!-- RELEASE text on diagonal -->
+  <text x="460" y="240" font-family="'Open Sans', Arial, sans-serif" font-size="36" font-weight="700" fill="#FFFFFF" text-anchor="middle" transform="rotate(-50 460 240)">RELEASE</text>
+  
+  <!-- Dev cycle labels (Left loop - counterclockwise) -->
+  <text x="150" y="245" font-family="'Open Sans', Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle">BUILD</text>
+  <text x="175" y="135" font-family="'Open Sans', Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle">CODE</text>
+  <text x="325" y="70" font-family="'Open Sans', Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle">PLAN</text>
+  <text x="220" y="370" font-family="'Open Sans', Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle">TEST</text>
+  
+  <!-- Ops cycle labels (Right loop - clockwise) -->
+  <text x="575" y="70" font-family="'Open Sans', Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle">DEPLOY</text>
+  <text x="750" y="245" font-family="'Open Sans', Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle">OPERATE</text>
+  <text x="650" y="390" font-family="'Open Sans', Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle">MONITOR</text>
+</svg>

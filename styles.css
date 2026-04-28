@@ -401,6 +401,33 @@ html {
     margin-bottom: 12px;
 }
 
+.hero-title-text {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--mb-blue);
+    text-align: left;
+    letter-spacing: 1px;
+    margin: 20px 0 15px 0;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+.devops-lifecycle-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.devops-lifecycle-image {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    filter: brightness(1.1);
+}
+
 .hero-image-container {
     margin: 20px 0;
     display: flex;
@@ -991,6 +1018,60 @@ html {
     gap: 20px;
 }
 
+/* Expandable Diagram Section */
+.expandable-diagram {
+    margin: 20px 0;
+}
+
+.diagram-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, rgba(0, 141, 252, 0.1) 0%, rgba(0, 141, 252, 0.05) 100%);
+    border: 1px solid rgba(0, 141, 252, 0.3);
+    border-radius: 8px;
+    color: var(--mb-blue);
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s var(--easing-smooth);
+}
+
+.diagram-toggle:hover {
+    background: linear-gradient(135deg, rgba(0, 141, 252, 0.15) 0%, rgba(0, 141, 252, 0.08) 100%);
+    border-color: var(--mb-blue);
+    transform: translateY(-2px);
+}
+
+.diagram-toggle.active {
+    background: linear-gradient(135deg, rgba(0, 141, 252, 0.2) 0%, rgba(0, 141, 252, 0.1) 100%);
+    border-color: var(--mb-blue);
+}
+
+.expand-arrow {
+    transition: transform 0.3s var(--easing-smooth);
+    color: var(--mb-blue);
+}
+
+.diagram-content {
+    margin-top: 15px;
+    animation: slideDown 0.3s var(--easing-smooth);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Diagram Container for Special Sections */
 .diagram-container {
     width: 100%;
@@ -1534,6 +1615,17 @@ html {
     
     .hero-title {
         font-size: 32px;
+    }
+    
+    .hero-title-text {
+        font-size: 20px;
+        letter-spacing: 0.5px;
+        margin: 15px 0 10px 0;
+        white-space: normal;
+    }
+    
+    .devops-lifecycle-image {
+        max-width: 100%;
     }
     
     .hero-tagline-image {

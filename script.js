@@ -48,6 +48,26 @@ function addRevealAnimations() {
     });
 }
 
+// Toggle diagram visibility
+function toggleDiagram(button) {
+    const expandableSection = button.parentElement;
+    const content = expandableSection.querySelector('.diagram-content');
+    const arrow = button.querySelector('.expand-arrow');
+    const label = button.querySelector('span');
+    
+    if (content.style.display === 'none') {
+        content.style.display = 'block';
+        arrow.style.transform = 'rotate(180deg)';
+        label.textContent = 'Hide Diagram';
+        button.classList.add('active');
+    } else {
+        content.style.display = 'none';
+        arrow.style.transform = 'rotate(0deg)';
+        label.textContent = 'Show Diagram';
+        button.classList.remove('active');
+    }
+}
+
 // Helper function to escape HTML to prevent XSS
 function escapeHtml(text) {
     const div = document.createElement('div');
@@ -290,22 +310,35 @@ function loadPhaseContent(phaseId, selectedRolesArray) {
             // Special handling for diagram sections
             if (category.isDiagram) {
                 html += `
-                    <div class="diagram-container">
-                        <img src="images/safe-lean-startup-cycle.png" 
-                             alt="SAFe Lean Startup Cycle" 
-                             class="phase-diagram"
-                             onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\\'padding:40px; text-align:center; color:#008DFC;\\'><h3>📊 SAFe Lean Startup Cycle Diagram</h3><p style=\\'margin-top:20px; color:#C0C0C0;\\'>Image not found. Please save the diagram as:<br/><strong>safe-lean-startup-cycle.png</strong><br/>in the <strong>website/images/</strong> folder.</p></div>';" />
-                    </div>
+                    <div class="expandable-diagram">
+                        <button class="diagram-toggle" onclick="toggleDiagram(this)">
+                            <svg class="expand-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Show Diagram</span>
+                        </button>
+                        <div class="diagram-content" style="display: none;">
+                            <div class="diagram-container">
+                                <img src="images/safe-lean-startup-cycle.png" 
+                                     alt="SAFe Lean Startup Cycle" 
+                                     class="phase-diagram"
+                                     onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\\'padding:40px; text-align:center; color:#008DFC;\\'><h3>📊 SAFe Lean Startup Cycle Diagram</h3><p style=\\'margin-top:20px; color:#C0C0C0;\\'>Image not found. Please save the diagram as:<br/><strong>safe-lean-startup-cycle.png</strong><br/>in the <strong>website/images/</strong> folder.</p></div>';" />
+                            </div>
                 `;
                 
                 // Show diagram outcome below image
                 if (category.diagramOutcome) {
                     html += `
-                        <div class="diagram-outcome">
-                            <p>${escapeHtml(category.diagramOutcome)}</p>
-                        </div>
+                            <div class="diagram-outcome">
+                                <p>${escapeHtml(category.diagramOutcome)}</p>
+                            </div>
                     `;
                 }
+                
+                html += `
+                        </div>
+                    </div>
+                `;
             }
             // Handle grouped tasks with shared outcome
             else if (category.groupedOutcome) {
