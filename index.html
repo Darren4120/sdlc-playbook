@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDLC Playbook - IT @ MBRDI</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Note: Mercedes-Benz Corpo fonts require proper licensing -->
+    <!-- Using fallback fonts that match MB brand style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Open+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="mb-logo">
+                <img src="mb-logo.svg" alt="Mercedes-Benz Logo" class="mb-logo-svg" />
+            </div>
+            <div class="loading-text">INITIALIZING SDLC PLAYBOOK</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" onclick="scrollToTop()" title="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <!-- Main Container -->
+    <div id="main-container" class="hidden">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo-section" onclick="showHome()" title="Return to Home">
+                    <div class="mb-logo-small">
+                        <img src="mb-logo.svg" alt="Mercedes-Benz" class="logo-star-small" />
+                    </div>
+                    <h1 class="header-title">SDLC PLAYBOOK</h1>
+                    <span class="header-subtitle">IT @ MBRDI</span>
+                </div>
+                <nav class="header-nav">
+                    <button class="nav-btn" onclick="showHome()">Home</button>
+                    <button class="nav-btn" onclick="showAbout()">About</button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Home/Landing Section -->
+        <section id="home-section" class="section active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-image-container">
+                        <img src="images/continuous-delivery-pipeline.svg" alt="Software Engineering Excellence" class="hero-tagline-image">
+                    </div>
+                    <div class="hero-divider"></div>
+                    <p class="hero-description">
+                        Navigate through our comprehensive SDLC framework - from Discovery to Release on Demand.
+                        Built with security and automation embedded throughout every phase.
+                    </p>
+                </div>
+
+                <!-- Selection Panel -->
+                <div class="selection-panel">
+                    <div class="panel-header">
+                        <h3>SELECT YOUR PATH</h3>
+                    </div>
+                    
+                    <div class="selection-container">
+                        <!-- Phase Selection -->
+                        <div class="selection-group">
+                            <label for="phase-select" class="selection-label">
+                                SELECT SDLC PHASE
+                            </label>
+                            <select id="phase-select" class="custom-select">
+                                <option value="">Choose Phase...</option>
+                                <option value="discovery">1. Discovery - Understanding & Aligning</option>
+                                <option value="build-test">2. Build & Test - Built-in Quality</option>
+                                <option value="cd">3. Continuous Deployment</option>
+                                <option value="rod">4. Release on Demand</option>
+                            </select>
+                        </div>
+
+                        <!-- Launch Button -->
+                        <button id="launch-btn" class="launch-button" onclick="launchPlaybook()">
+                            <span class="btn-text">LAUNCH PLAYBOOK</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Playbook Content Section -->
+        <section id="playbook-section" class="section">
+            <div class="playbook-header">
+                <button class="back-btn" onclick="showHome()">← Back</button>
+                <div class="current-selection">
+                    <div class="phase-selector-inline">
+                        <select id="phase-select-inline" class="custom-select phase-dropdown" onchange="handlePhaseChangeInPlaybook()">
+                            <option value="discovery">1. Discovery - Understanding & Aligning</option>
+                            <option value="build-test">2. Build & Test - Built-in Quality</option>
+                            <option value="cd">3. Continuous Deployment</option>
+                            <option value="rod">4. Release on Demand</option>
+                        </select>
+                    </div>
+                    <div class="role-selector-inline">
+                        <div class="multi-select-wrapper">
+                            <button class="multi-select-btn" id="roleSelectBtn" onclick="toggleRoleDropdown()">
+                                <span id="selectedRolesText">Select Roles...</span>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div class="multi-select-dropdown" id="roleDropdown" style="display: none;">
+                                <div class="multi-select-header">
+                                    <span>Select Roles</span>
+                                    <button class="clear-all-btn" onclick="clearAllRoles()">Clear All</button>
+                                </div>
+                                <div class="multi-select-options">
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" value="product-owner" onchange="updateRoleSelection()">
+                                        <span class="checkbox-label">Product Owner / Product Manager / Product Strategy</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" value="scrum-master" onchange="updateRoleSelection()">
+                                        <span class="checkbox-label">Scrum Master / Agile Coach</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" value="tech-lead" onchange="updateRoleSelection()">
+                                        <span class="checkbox-label">Tech Lead / Solution Architect</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" value="developer" onchange="updateRoleSelection()">
+                                        <span class="checkbox-label">Developer / Development Team</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" value="qa-engineer" onchange="updateRoleSelection()">
+                                        <span class="checkbox-label">QA Engineer / Performance Engineer</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" value="devops-engineer" onchange="updateRoleSelection()">
+                                        <span class="checkbox-label">DevOps Engineer / Release Manager</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" value="security-engineer" onchange="updateRoleSelection()">
+                                        <span class="checkbox-label">Security Engineer</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" value="ux-designer" onchange="updateRoleSelection()">
+                                        <span class="checkbox-label">UX Designer / UX Researcher</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" value="business-analyst" onchange="updateRoleSelection()">
+                                        <span class="checkbox-label">Business Analyst / Data Analyst</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" value="project-manager" onchange="updateRoleSelection()">
+                                        <span class="checkbox-label">Leadership / Project Manager / Service Manager</span>
+                                    </label>
+                                </div>
+                                <div class="multi-select-footer">
+                                    <button class="apply-btn" onclick="applyRoleFilter()">Apply Filter</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase Content Container -->
+            <div id="phase-content" class="phase-content">
+                <!-- Content will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about-section" class="section">
+            <div class="about-content">
+                <h2>About This Playbook</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3>Purpose</h3>
+                        <p>This interactive playbook provides a comprehensive guide to our SDLC framework, ensuring fast feedback loops, high quality, and business agility.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Methodology</h3>
+                        <p>Built on industry best practices with DevSecOps at its core, featuring continuous integration, deployment, and feedback loops throughout the development lifecycle.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Security First</h3>
+                        <p>Security is embedded throughout the lifecycle, not added later. We practice DevSecOps with shared ownership.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Automation</h3>
+                        <p>Automation-first mindset with fully automated CI/CD pipelines, self-service environments, and quality gates at every stage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    <script src="playbook-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+     
